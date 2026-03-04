@@ -32,6 +32,11 @@ See https://github.com/adobe-type-tools/cmap-resources
     display: none !important;
   }
 </style>
+      <script>
+  const url = new URL(window.location.href);
+  url.searchParams.set('t', Date.now());
+  window.location.href = url.toString();
+</script>
       
     <title>PDF.js viewer</title>
 
