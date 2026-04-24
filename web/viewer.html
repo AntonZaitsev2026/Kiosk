@@ -30,15 +30,22 @@ See https://github.com/adobe-type-tools/cmap-resources
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="google" content="notranslate" />
     
-  <script>
+<script>
+  const TARGET_URL =
+    "https://antonzaitsev2026.github.io/Kiosk/web/viewer.html?file=../file-sample1.pdf";
 
-      setTimeout(() => {
-  window.location.replace(
-    "https://antonzaitsev2026.github.io/Kiosk/web/viewer.html?file=../file-sample1.pdf"
-  );
-}, 30000);
-      
-  </script>
+  const DELAY_MS = 30000; // 30 seconds
+
+  // If we are NOT already on the correct URL → redirect immediately
+  if (window.location.href !== TARGET_URL) {
+    window.location.replace(TARGET_URL);
+  } else {
+    // If URL is correct → wait, then reload (or re-open)
+    setTimeout(() => {
+      window.location.replace(TARGET_URL);
+    }, DELAY_MS);
+  }
+</script>
 
 <style>
   #toolbarContainer {
