@@ -31,6 +31,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     <meta name="google" content="notranslate" />
     
 <script>
+  const DEFAULT_URL = "https://antonzaitsev2026.github.io/Kiosk/web/viewer.html";
   const TARGET_URL =
     "https://antonzaitsev2026.github.io/Kiosk/web/viewer.html?file=../file-sample4.pdf";
 
@@ -42,7 +43,7 @@ See https://github.com/adobe-type-tools/cmap-resources
   } else {
     // If URL is correct → wait, then reload (or re-open)
     setTimeout(() => {
-      window.location.replace(TARGET_URL);
+      window.location.replace(DEFAULT_URL);
     }, DELAY_MS);
   }
 </script>
