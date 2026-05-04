@@ -31,20 +31,21 @@ See https://github.com/adobe-type-tools/cmap-resources
     <meta name="google" content="notranslate" />
     
 <script>
-  const DEFAULT_URL = "https://antonzaitsev2026.github.io/Kiosk/web/viewer.html"; //DON'T CHANGE!
-  const TARGET_URL =
-    "https://antonzaitsev2026.github.io/Kiosk/web/viewer.html?file=../file-sample3.pdf";
+  const DEFAULT_URL = "https://antonzaitsev2026.github.io/Kiosk/web/viewer.html";
+  const DELAY_MS = 10000;
 
-  const DELAY_MS = 10000; // 10 seconds
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get("file");
 
-  // If we are NOT already on the correct URL → redirect immediately
-  if (window.location.href !== TARGET_URL) {
-    window.location.replace(TARGET_URL);
-  } else {
-    // If URL is correct → wait, then reload (or re-open)
+  if (file) {
+    // We are already viewing a PDF → return to default after delay
     setTimeout(() => {
       window.location.replace(DEFAULT_URL);
     }, DELAY_MS);
+  } else {
+    // No file → redirect to desired PDF
+    const target = DEFAULT_URL + "?file=../file-sample3.pdf";
+    window.location.replace(target);
   }
 </script>
 
