@@ -4,19 +4,12 @@
   <meta charset="utf-8">
   <title>Kiosk Controller</title>
   <script>
-    const PDF_FILE = "file-sample3.pdf"; // change HERE
-    const DELAY_MS = 15000;
-
+    const PDF_FILE = "file-sample3.pdf"; // change THIS
     const viewerUrl =
       "web/viewer.html?file=../" + encodeURIComponent(PDF_FILE);
 
-    // Load PDF
-    window.location.replace(viewerUrl);
-
-    // Return to controller after delay
-    setTimeout(() => {
-      window.location.replace("index.html");
-    }, DELAY_MS);
+    // Go to viewer
+    window.location.href = viewerUrl;
   </script>
 </head>
 <body></body>
