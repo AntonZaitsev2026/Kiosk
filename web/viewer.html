@@ -30,25 +30,6 @@ See https://github.com/adobe-type-tools/cmap-resources
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="google" content="notranslate" />
     
-<script>
-  const DEFAULT_URL = "https://antonzaitsev2026.github.io/Kiosk/web/viewer.html";
-  const DELAY_MS = 15000;
-
-  const params = new URLSearchParams(window.location.search);
-  const file = params.get("file");
-
-  if (file) {
-    // We are already viewing a PDF → return to default after delay
-    setTimeout(() => {
-      window.location.replace(DEFAULT_URL);
-    }, DELAY_MS);
-  } else {
-    // No file → redirect to desired PDF
-    const target = DEFAULT_URL + "?file=../file-sample1.pdf";
-    window.location.replace(target);
-  }
-</script>
-
 <style>
   #toolbarContainer {
     display: none !important;
