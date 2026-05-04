@@ -4,12 +4,16 @@
   <meta charset="utf-8">
   <title>Kiosk Controller</title>
   <script>
-    const PDF_FILE = "file-sample3.pdf"; // change THIS
-    const viewerUrl =
-      "web/viewer.html?file=../" + encodeURIComponent(PDF_FILE);
+    fetch("config.json?ts=" + Date.now())
+      .then(r => r.json())
+      .then(cfg => {
+        const viewerUrl =
+          "web/viewer.html?file=../" +
+          encodeURIComponent(cfg.pdf) +
+          "&duration=" + cfg.duration;
 
-    // Go to viewer
-    window.location.href = viewerUrl;
+        window.location.href = viewerUrl;
+      });
   </script>
 </head>
 <body></body>
