@@ -42,12 +42,12 @@ See https://github.com/adobe-type-tools/cmap-resources
 <link rel="resource" type="application/l10n" href="locale/locale.json" />
 
 <script>
-  const RETURN_URL = "../index.html";
-  const DELAY_MS = 15000;
+  const params = new URLSearchParams(window.location.search);
+  const delay = Number(params.get("duration")) || 15000;
 
   setTimeout(() => {
-    window.location.replace(RETURN_URL);
-  }, DELAY_MS);
+    window.location.replace("../index.html");
+  }, delay);
 </script>
       
 <script src="../build/pdf.mjs" type="module"></script>
